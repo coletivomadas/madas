@@ -1,31 +1,23 @@
 import React from 'react';
-import {} from 'native-base';
+import { Button, Icon, Input, ListItem } from 'native-base';
 
-const AddTaskItem = () => {
+interface IProps {
+  onChangeText: (text: string) => void;
+  onSubmitEditing: () => void;
+  placeholder: string;
+  value: string;
+}
+
+const AddTaskItem = (props: IProps) => {
+  const { placeholder, value, onChangeText, onSubmitEditing } = props;
   return (
     <ListItem>
       <Button transparent>
         <Icon active name="add" />
       </Button>
-      <Input
-        placeholder="Adicione uma nova tarefa..."
-        value={this.state.input}
-        onSubmitEditing={() =>
-          this.setState({
-            data: [
-              {
-                id: (this.state.data.length + 1).toString(),
-                title: this.state.input,
-                isDeleted: false,
-                isDone: false,
-              },
-              ...this.state.data,
-            ],
-            input: '',
-          })
-        }
-        onChangeText={text => this.setState({ input: text })}
-      />
+      <Input placeholder={placeholder} value={value} onSubmitEditing={onSubmitEditing} onChangeText={onChangeText} />
     </ListItem>
   );
 };
+
+export default AddTaskItem;
