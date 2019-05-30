@@ -1,4 +1,4 @@
-package com.madas;
+package win.nickforthe.madas;
 
 import android.app.Application;
 
