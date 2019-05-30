@@ -9,6 +9,13 @@ interface IProps {
   value: string;
 }
 
+/**
+ * Add new a Task component
+ *
+ * @todo Focus Input when pressing/focusing the Card itself;
+ * @todo Animate the Icon to change its color when being focused;
+ * @todo Animate the Text to fade out in bottom of container when submiting;
+ */
 const AddTaskItem = (props: IProps) => {
   const [isFocused, useSetFocus] = React.useState(false);
   const { placeholder, value, onChangeText, onSubmitEditing } = props;
