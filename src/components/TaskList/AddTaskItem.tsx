@@ -13,8 +13,7 @@ const AddTaskItem = (props: IProps) => {
   const [isFocused, useSetFocus] = React.useState(false);
   const { placeholder, value, onChangeText, onSubmitEditing } = props;
   return (
-    <ListItem>
-      <Button transparent>
+      <ListItem style={styles.addItemSubContainer} onFocus={() => !isFocused && useSetFocus(true)}>
         <Icon
           active
           name="add"

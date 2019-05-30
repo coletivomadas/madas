@@ -1,7 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  addTaskItemIcon: {
+  addItemContainer: {},
+  addItemSubContainer: {
+    paddingBottom: 10,
+    paddingTop: 10,
+  },
+  addItemIcon: {
     fontSize: 28,
   },
   addItemInactiveIcon: {
