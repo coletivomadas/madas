@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, Input, ListItem } from 'native-base';
+import { Button, Card, Icon, Input, ListItem } from 'native-base';
 import styles from './styles';
 
 interface IProps {
@@ -13,6 +13,7 @@ const AddTaskItem = (props: IProps) => {
   const [isFocused, useSetFocus] = React.useState(false);
   const { placeholder, value, onChangeText, onSubmitEditing } = props;
   return (
+    <Card style={styles.addItemContainer}>
       <ListItem style={styles.addItemSubContainer} onFocus={() => !isFocused && useSetFocus(true)}>
         <Icon
           active
@@ -29,6 +30,7 @@ const AddTaskItem = (props: IProps) => {
         onChangeText={onChangeText}
       />
     </ListItem>
+    </Card>
   );
 };
 
