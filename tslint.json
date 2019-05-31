@@ -11,6 +11,6 @@
   },
   "rulesDirectory": [],
   "linterOptions": {
-    "exclude": ["node_modules/**"]
+    "exclude": ["node_modules/**", "native-base-theme/**", "__tests__/**"]
   }
 }
