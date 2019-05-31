@@ -21,4 +21,20 @@ export default StyleSheet.create({
   addItemInput: {
     marginLeft: 20,
   },
+  taskItem: {
+    marginLeft: 20,
+    minHeight: 68,
+  },
+  taskItemText: {
+    marginHorizontal: 20,
+    paddingHorizontal: 0,
+  },
+  taskItemToBeFinishedText: {
+    color: '#000000',
+  },
+  taskItemFinishedText: {
+    color: '#B0B3BF',
+    textDecorationLine: 'line-through',
+    textDecorationStyle: 'solid',
+  },
 });
