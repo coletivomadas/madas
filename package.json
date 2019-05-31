@@ -3,14 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "devtools": "adb shell input keyevent 82",
     "lint": "tslint -p tsconfig.json -t stylish",
     "lint:fix": "yarn lint -- --fix",
+    "release:android": "cd android && ./gradlew assembleRelease",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:emulator": "emulator -avd Nexus_5X_API_28_x86",
     "start:android": "react-native run-android",
     "start:ios": "react-native run-ios",
     "start:iosx": "react-native run-ios --simulator=\"iPhone XS\"",
-    "test": "jest"
+		"test": "node node_modules/jest/bin/jest --verbose --coverage",
+		"test:coverage": "node node_modules/jest/bin/jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+		"test:update": "node node_modules/jest/bin/jest --verbose --coverage --updateSnapshot",
+    "test:watch": "node node_modules/jest/bin/jest --verbose --watch",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@types/react": "^16.8.17",
