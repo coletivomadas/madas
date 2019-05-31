@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, StyleProvider } from 'native-base';
 import getTheme from './native-base-theme/components';
 import material from './native-base-theme/variables/material';
+import TaskScreen from './src/containers/TaskScreen';
 import firebase from 'react-native-firebase';
 
 export default class App extends React.Component {
@@ -33,6 +34,7 @@ export default class App extends React.Component {
     return (
       <StyleProvider style={getTheme(material)}>
         <Container>
+          <TaskScreen />
         </Container>
       </StyleProvider>
     );
