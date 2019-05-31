@@ -23,11 +23,11 @@ const AddTaskItem = (props: IProps) => {
   return (
     <Card style={styles.addItemContainer}>
       <ListItem style={styles.addItemSubContainer} onFocus={() => !isFocused && useSetFocus(true)}>
-          <Icon
-            active
-            name="add"
-            style={[styles.addItemIcon, !isFocused ? styles.addItemInactiveIcon : styles.addItemActiveIcon]}
-          />
+        <Icon
+          active
+          name="add"
+          style={[styles.addItemIcon, !isFocused ? styles.addItemInactiveIcon : styles.addItemActiveIcon]}
+        />
         <Input
           autoCapitalize="characters"
           onBlur={() => useSetFocus(false)}
@@ -37,6 +37,7 @@ const AddTaskItem = (props: IProps) => {
           value={value}
           onSubmitEditing={onSubmitEditing}
           onChangeText={onChangeText}
+          style={styles.addItemInput}
         />
       </ListItem>
     </Card>

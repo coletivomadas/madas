@@ -1,10 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  addItemContainer: {},
+  addItemContainer: {
+    height: 68,
+  },
   addItemSubContainer: {
     paddingBottom: 10,
     paddingTop: 10,
+    marginLeft: 20,
   },
   addItemIcon: {
     fontSize: 28,
@@ -14,5 +17,8 @@ export default StyleSheet.create({
   },
   addItemActiveIcon: {
     color: '#000000',
+  },
+  addItemInput: {
+    marginLeft: 20,
   },
 });
