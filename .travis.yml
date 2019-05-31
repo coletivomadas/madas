@@ -19,6 +19,6 @@ jobs:
       name: 'Typecheck'
     - script: npm run lint
       name: 'Linter'
-    - stage: test
-      script: npm run test:update
-      name: 'Unit Test'
+    # - stage: test
+    #   script: npm run test:update
+    #   name: 'Unit Test'
