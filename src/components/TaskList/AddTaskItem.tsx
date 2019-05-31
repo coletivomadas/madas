@@ -15,6 +15,7 @@ interface IProps {
  * @todo Focus Input when pressing/focusing the Card itself;
  * @todo Animate the Icon to change its color when being focused;
  * @todo Animate the Text to fade out in bottom of container when submiting;
+ * @todo Adjust elevation style when the component is focused
  */
 const AddTaskItem = (props: IProps) => {
   const [isFocused, useSetFocus] = React.useState(false);
