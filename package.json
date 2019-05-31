@@ -12,9 +12,9 @@
     "start:android": "react-native run-android",
     "start:ios": "react-native run-ios",
     "start:iosx": "react-native run-ios --simulator=\"iPhone XS\"",
-		"test": "node node_modules/jest/bin/jest --verbose --coverage",
-		"test:coverage": "node node_modules/jest/bin/jest --verbose --coverage && open ./coverage/lcov-report/index.html",
-		"test:update": "node node_modules/jest/bin/jest --verbose --coverage --updateSnapshot",
+    "test": "node node_modules/jest/bin/jest --verbose --coverage",
+    "test:coverage": "node node_modules/jest/bin/jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+    "test:update": "node node_modules/jest/bin/jest --verbose --coverage --updateSnapshot",
     "test:watch": "node node_modules/jest/bin/jest --verbose --watch",
     "tsc": "tsc"
   },
@@ -24,11 +24,13 @@
     "native-base": "2.12.1",
     "react": "16.8.3",
     "react-native": "0.59.8",
-    "react-native-firebase": "5.3.1"
+    "react-native-firebase": "5.3.1",
+    "uuid": "3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/runtime": "^7.4.4",
+    "@types/uuid": "^3.4.4",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.54.0",
