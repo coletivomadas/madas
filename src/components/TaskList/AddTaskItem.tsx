@@ -31,7 +31,7 @@ const AddTaskItem = (props: IProps) => {
       </Button>
       <Input
         onBlur={() => useSetFocus(false)}
-          blurOnSubmit={false}
+        blurOnSubmit={false}
         onFocus={() => !isFocused && useSetFocus(true)}
         placeholder={!isFocused ? placeholder : ''}
         value={value}
