@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Content, Text, StyleProvider } from 'native-base';
+import { Container, StyleProvider } from 'native-base';
 import getTheme from './native-base-theme/components';
 import material from './native-base-theme/variables/material';
 import firebase from 'react-native-firebase';
@@ -29,7 +29,6 @@ export default class App extends React.Component {
     }
   };
 
-export default class App extends Component {
   render() {
     return (
       <StyleProvider style={getTheme(material)}>
@@ -39,4 +38,3 @@ export default class App extends Component {
     );
   }
 }
-
