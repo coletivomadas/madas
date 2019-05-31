@@ -4,6 +4,18 @@ import getTheme from './native-base-theme/components';
 import material from './native-base-theme/variables/material';
 import TaskScreen from './src/containers/TaskScreen';
 import firebase from 'react-native-firebase';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: TaskScreen,
+    navigationOptions: {
+      header: null,
+    },
+  },
+});
+
+const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
   componentDidMount = async () => {
@@ -34,7 +46,7 @@ export default class App extends React.Component {
     return (
       <StyleProvider style={getTheme(material)}>
         <Container>
-          <TaskScreen />
+          <AppContainer />
         </Container>
       </StyleProvider>
     );
