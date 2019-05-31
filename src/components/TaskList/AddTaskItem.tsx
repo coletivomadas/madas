@@ -24,22 +24,23 @@ const AddTaskItem = (props: IProps) => {
     <Card style={styles.addItemContainer}>
       <ListItem style={styles.addItemSubContainer} onFocus={() => !isFocused && useSetFocus(true)}>
         <Button transparent onFocus={() => !isFocused && useSetFocus(true)}>
-        <Icon
-          active
-          name="add"
+          <Icon
+            active
+            name="add"
             style={[styles.addItemIcon, !isFocused ? styles.addItemInactiveIcon : styles.addItemActiveIcon]}
+          />
+        </Button>
+        <Input
+          autoCapitalize="characters"
+          onBlur={() => useSetFocus(false)}
+          blurOnSubmit={false}
+          onFocus={() => !isFocused && useSetFocus(true)}
+          placeholder={!isFocused ? placeholder : ''}
+          value={value}
+          onSubmitEditing={onSubmitEditing}
+          onChangeText={onChangeText}
         />
-      </Button>
-      <Input
-        onBlur={() => useSetFocus(false)}
-        blurOnSubmit={false}
-        onFocus={() => !isFocused && useSetFocus(true)}
-        placeholder={!isFocused ? placeholder : ''}
-        value={value}
-        onSubmitEditing={onSubmitEditing}
-        onChangeText={onChangeText}
-      />
-    </ListItem>
+      </ListItem>
     </Card>
   );
 };
