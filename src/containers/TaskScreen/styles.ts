@@ -16,6 +16,7 @@ export default StyleSheet.create({
   headerContent: {
     color: '#122930',
     fontSize: 28,
+    fontWeight: '600',
   },
   content: {
     paddingHorizontal: 20,
