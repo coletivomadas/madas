@@ -18,11 +18,14 @@ interface IProps {
  * @todo Adjust elevation style when the component is focused
  */
 const AddTaskItem = (props: IProps) => {
-  const [isFocused, useSetFocus] = React.useState(false);
+  const [isFocused, setFocus] = React.useState(false);
   const { placeholder, value, onChangeText, onSubmitEditing } = props;
   return (
     <Card style={styles.addItemContainer}>
-      <ListItem style={styles.addItemSubContainer} onFocus={() => !isFocused && useSetFocus(true)}>
+      <ListItem
+        style={styles.addItemSubContainer}
+        onFocus={() => !isFocused && setFocus(true)}
+      >
         <Icon
           active
           name="add"
@@ -30,9 +33,9 @@ const AddTaskItem = (props: IProps) => {
         />
         <Input
           autoCapitalize="characters"
-          onBlur={() => useSetFocus(false)}
+          onBlur={() => setFocus(false)}
           blurOnSubmit={false}
-          onFocus={() => !isFocused && useSetFocus(true)}
+          onFocus={() => !isFocused && setFocus(true)}
           placeholder={!isFocused ? placeholder : ''}
           value={value}
           onSubmitEditing={onSubmitEditing}
