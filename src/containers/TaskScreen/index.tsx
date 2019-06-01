@@ -6,6 +6,7 @@ import TaskList, { TaskItemProps } from '../../components/TaskList';
 import uuid from 'uuid/v4';
 import { CollectionReference } from 'react-native-firebase/firestore';
 import styles from './styles';
+import Tasks from '../../stores/Tasks';
 
 /** */
 type Panel = {
@@ -97,7 +98,7 @@ export default class TaskScreen extends React.Component<{}, IState> {
   render() {
     const hasContent = this.state.data.length > 0;
     return (
-      <>
+      <Tasks.Provider value={{ onDelete: this._onDelete, onFinish: this._onFinish }}>
         <View style={styles.headerBackground} />
         <Content style={styles.content}>
           <View style={styles.header}>
@@ -109,9 +110,9 @@ export default class TaskScreen extends React.Component<{}, IState> {
             onSubmitEditing={this._onSubmitEditing}
             onChangeText={this._onChangeText}
           />
-          {hasContent && <TaskList data={this.state.data} onDelete={this._onDelete} onFinish={this._onFinish} />}
+          {hasContent && <TaskList data={this.state.data} />}
         </Content>
-      </>
+      </Tasks.Provider>
     );
   }
 }

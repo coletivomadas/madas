@@ -5,8 +5,6 @@ import TaskItem, { TaskItemProps } from './TaskItem';
 
 interface IProps {
   data: TaskItemProps[];
-  onDelete: (id: string) => void;
-  onFinish: (id: string) => void;
 }
 
 const TaskList = (props: IProps) => {
@@ -22,8 +20,6 @@ const TaskList = (props: IProps) => {
             title={item.title}
             isDone={item.isDone}
             isDeleted={item.isDeleted}
-            onDelete={props.onDelete}
-            onFinish={props.onFinish}
           />
         )}
       />
