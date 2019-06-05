@@ -1,4 +1,5 @@
 import React from 'react';
+import { Modal } from 'react-native';
 import { Content, Text, View } from 'native-base';
 import firebase from 'react-native-firebase';
 import AddTaskItem from '../../components/TaskList/AddTaskItem';
@@ -8,20 +9,17 @@ import { CollectionReference } from 'react-native-firebase/firestore';
 import styles from './styles';
 import Tasks from '../../stores/Tasks';
 
-/** */
-type Panel = {
-  title: string;
-  label: string;
-  labelColor: string;
-  due: Date;
-  lists: TaskItemProps[];
-};
-
 interface IState {
   data: TaskItemProps[];
   input: string;
 }
 
+/**
+ * @todo ability to create a detailed task
+ * @todo ability to edit a task
+ * @todo ability to delete a task
+ * @todo ability to show deleted tasks ordered by deletion date
+ */
 export default class TaskScreen extends React.Component<{}, IState> {
   constructor(props: {}) {
     super(props);
@@ -38,14 +36,14 @@ export default class TaskScreen extends React.Component<{}, IState> {
   };
 
   componentDidMount() {
-    this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
+    this.unsubscribe = this.ref.onSnapshot(this._onCollectionUpdate);
   }
 
   componentWillUnmount() {
     this.unsubscribe!();
   }
 
-  onCollectionUpdate = (querySnapshot: any) => {
+  _onCollectionUpdate = (querySnapshot: any) => {
     const data: TaskItemProps[] = [];
     querySnapshot.forEach((doc: any) => {
       const { title, isDone, isDeleted } = doc.data();

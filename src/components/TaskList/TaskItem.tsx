@@ -1,5 +1,6 @@
 import React from 'react';
-import { CheckBox, ListItem, Text } from 'native-base';
+import { View } from 'react-native';
+import { Card, CheckBox, ListItem, Text } from 'native-base';
 import styles from './styles';
 import Tasks from '../../stores/Tasks';
 
@@ -19,24 +20,29 @@ const TaskItem = (props: TaskItemProps) => {
     <Tasks.Consumer>
       {context =>
         context && (
-          <ListItem noBorder onPress={() => useStatus(!isDone)} style={styles.taskItem}>
-            <CheckBox
-              color={isDone ? DONE_TASK_COLOR : OPEN_TASK_COLOR}
-              checked={isDone}
-              onPress={() => {
-                useStatus(!isDone);
-                context.onFinish(props.id);
-              }}
-              onLongPress={() => context.onDelete(props.id)}
-            />
-            <Text
-              numberOfLines={3}
-              ellipsizeMode="tail"
-              style={[isDone ? styles.taskItemFinishedText : styles.taskItemToBeFinishedText, styles.taskItemText]}
-            >
-              {props.title}
-            </Text>
-          </ListItem>
+          <Card noShadow style={{ flexDirection: 'row' }}>
+            <View style={isDone ? styles.taskItemLeftBorder : styles.taskItemInactiveLeftBorder} />
+            <View>
+              <ListItem noBorder onPress={() => useStatus(!isDone)} style={styles.taskItem}>
+                <CheckBox
+                  color={isDone ? DONE_TASK_COLOR : OPEN_TASK_COLOR}
+                  checked={isDone}
+                  onPress={() => {
+                    useStatus(!isDone);
+                    context.onFinish(props.id);
+                  }}
+                  onLongPress={() => context.onDelete(props.id)}
+                />
+                <Text
+                  numberOfLines={3}
+                  ellipsizeMode="tail"
+                  style={[isDone ? styles.taskItemFinishedText : styles.taskItemToBeFinishedText, styles.taskItemText]}
+                >
+                  {props.title}
+                </Text>
+              </ListItem>
+            </View>
+          </Card>
         )
       }
     </Tasks.Consumer>
