@@ -25,6 +25,14 @@ export default StyleSheet.create({
     marginLeft: 20,
     minHeight: 68,
   },
+  taskItemLeftBorder: {
+    backgroundColor: '#CFBAF8',
+    width: 5,
+  },
+  taskItemInactiveLeftBorder: {
+    backgroundColor: '#FFFFFF',
+    width: 5,
+  },
   taskItemText: {
     marginHorizontal: 20,
     paddingHorizontal: 0,
