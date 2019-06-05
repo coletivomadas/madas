@@ -2,7 +2,6 @@ import React from 'react';
 import { FlatList } from 'react-native';
 import { Card } from 'native-base';
 import TaskItem, { TaskItemProps } from './TaskItem';
-import AddDetailedTaskItem from './AddDetailedTaskItem';
 
 interface IProps {
   data: TaskItemProps[];
@@ -22,5 +21,5 @@ const TaskList = (props: IProps) => {
   );
 };
 
-export { AddDetailedTaskItem, TaskItemProps };
+export { TaskItemProps };
 export default TaskList;
