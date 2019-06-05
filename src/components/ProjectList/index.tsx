@@ -29,6 +29,12 @@ const data = [
     tasksAmount: 3,
     isArchived: false,
   },
+  {
+    id: uuid(),
+    title: 'Calourada 2020',
+    tasksAmount: 3,
+    isArchived: false,
+  },
 ];
 
 interface IProps {
@@ -39,21 +45,15 @@ interface IProps {
 const ProjectList = (props: IProps) => {
   const { title, tasksAmount } = props;
   return (
-    <>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>{title}</Text>
-        <Text>{tasksAmount}</Text>
-      </View>
-      <FlatList
-        showsHorizontalScrollIndicator={false}
-        horizontal
-        data={data}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => (
-          <ProjectItem id={item.id} title={item.title} tasksAmount={item.tasksAmount} isArchived={item.isArchived} />
-        )}
-      />
-    </>
+    <FlatList
+      showsHorizontalScrollIndicator={false}
+      horizontal
+      data={data}
+      keyExtractor={item => item.id}
+      renderItem={({ item }) => (
+        <ProjectItem id={item.id} title={item.title} tasksAmount={item.tasksAmount} isArchived={item.isArchived} />
+      )}
+    />
   );
 };
 
