@@ -62,22 +62,6 @@ const Home: NavigationScreenComponent<{}> = (props: {}) => {
   );
 };
 
-// screen navigation options
-// Home.navigationOptions = (screenProps: NavigationScreenProps): NavigationStackScreenOptions => {
-//   // Close Modal
-//   const buttonleftPress = () => {
-//     screenProps.navigation.navigate('TaskScreen');
-//   };
-
-//   return {
-//     headerStyle: {
-//       elevation: 0,
-//       backgroundColor: '#F5FCFF',
-//     },
-//     headerLeft: <Icon name="close" color="black" onPress={buttonleftPress} />,
-//   };
-// };
-
 const { height: deviceHeight, width: deviceWidth } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
