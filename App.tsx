@@ -33,8 +33,6 @@ const MainNavigator = createStackNavigator({
 
 const AppNavigator = createSwitchNavigator(
   {
-    Pending: {},
-    Auth: {},
     Home: MainNavigator,
   },
   {
