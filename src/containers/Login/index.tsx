@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Dimensions, Image, StyleSheet, View } from 'react-native';
 import { Content, Button, Icon, Input, Item, Spinner, Text } from 'native-base';
 import { NavigationScreenComponent, NavigationScreenProps, NavigationStackScreenOptions } from 'react-navigation';
@@ -10,6 +10,7 @@ const { height: deviceHeight, width: deviceWidth } = Dimensions.get('window');
 const Login: NavigationScreenComponent = (props: IProps) => {
   const emailRef = useRef(null);
   const passwordRef = useRef<any>(null);
+  const [state, setState] = useState({ email: '', password: '' });
   return (
     <Content style={styles.scrollContainer} contentContainerStyle={styles.container}>
       <View style={styles.logoContainer}>
@@ -20,7 +21,9 @@ const Login: NavigationScreenComponent = (props: IProps) => {
           placeholder="Seu E-mail"
           returnKeyType={'next'}
           ref={emailRef}
+          value={state.email}
           keyboardType={'email-address'}
+          onChangeText={input => setState({ email: input, password: state.password })}
           onSubmitEditing={() => {
             passwordRef.current._root.focus();
           }}
@@ -29,6 +32,8 @@ const Login: NavigationScreenComponent = (props: IProps) => {
       <Item regular style={styles.item}>
         <Input
           placeholder="Password"
+          onChangeText={input => setState({ email: state.email, password: input })}
+          value={state.password}
           returnKeyType={'done'}
           ref={passwordRef}
         />
