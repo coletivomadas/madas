@@ -29,7 +29,6 @@ const Login: NavigationScreenComponent = (props: IProps) => {
       <Item regular style={styles.item}>
         <Input
           placeholder="Password"
-          style={styles.input}
           returnKeyType={'done'}
           ref={passwordRef}
         />
