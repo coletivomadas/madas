@@ -6,6 +6,9 @@ import TaskScreen from './src/containers/TaskScreen';
 import Home from './src/containers/Home';
 import firebase from 'react-native-firebase';
 import { createSwitchNavigator, createStackNavigator, createAppContainer } from 'react-navigation';
+import Loading from './src/containers/Loading';
+import Login from './src/containers/Login';
+import { StatusBar } from 'react-native';
 
 /**
  * @todo create keystore
@@ -31,12 +34,28 @@ const MainNavigator = createStackNavigator({
   },
 });
 
+const LoginNavigator = createStackNavigator({
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      header: null,
+    },
+  },
+});
+
 const AppNavigator = createSwitchNavigator(
   {
-    Home: MainNavigator,
+    Loading: {
+      screen: Loading,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Login: LoginNavigator,
+    Main: MainNavigator,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Loading',
   },
 );
 
@@ -71,6 +90,7 @@ export default class App extends React.Component {
     return (
       <StyleProvider style={getTheme(material)}>
         <Container>
+          <StatusBar barStyle={'dark-content'} backgroundColor={'#FFFFFF'} />
           <AppContainer />
         </Container>
       </StyleProvider>
