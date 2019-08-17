@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logoContainer: {
-    marginTop: deviceHeight * 0.18,
+    marginTop: deviceHeight * 0.12,
     marginBottom: deviceHeight * 0.04,
     backgroundColor: '#725B66',
   },
